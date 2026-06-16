@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - CLICKLIVE</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="perfil">
+
+    <!-- 🔥 BOTÓN BACK GLOBAL -->
+    <button class="btn-back" onclick="goBack()">
+        &#8249;
+    </button>
+
+    <div class="container app">
+
+        <!-- 🔥 CONTENIDO GENERAL -->
+        <div class="perfil-content">
+
+            <!-- =========================
+                 BLOQUE SUPERIOR
+            ========================== -->
+            <div class="bloque-superior">
+
+                <!-- FOTO PERFIL -->
+                <label class="foto-perfil">
+                    <input type="file" accept="image/*" onchange="cargarFoto(event)">
+                    
+                    <img id="preview" src="img/icons/SubirNube.png" alt="Foto perfil">
+                    
+                    <span>Agregar foto</span>
+                </label>
+
+                <!-- NOMBRE -->
+                <p id="nombreUsuarioTexto" class="nombre-usuario">
+                    cerveraofficial
+                </p>
+
+                <!-- INPUT OCULTO -->
+                <input 
+                    type="text" 
+                    id="nombreUsuarioInput" 
+                    class="input-login" 
+                    placeholder="Nuevo usuario"
+                    hidden
+                >
+
+                <!-- BOTÓN EDITAR -->
+                <button type="button" onclick="editarNombre()" class="btn-editar">
+                    Editar nombre
+                </button>
+
+                <!-- TEXTO -->
+                <p class="texto-perfil">
+                    Conecta con tus cuentas para analizar y gestionar contenido
+                </p>
+
+                <!-- LOGO -->
+                <img src="img/letrero-cl.png" class="letrero-cl" alt="ClickLive">
+
+            </div>
+
+            <!-- =========================
+                 REDES
+            ========================== -->
+            <div class="redes-grid">
+                <img src="img/icons/Instagram.png" data-red="Instagram" onclick="toggleRed(this)">
+                <img src="img/icons/Tiktok.png" data-red="TikTok" onclick="toggleRed(this)">
+                <img src="img/icons/Facebook.png" data-red="Facebook" onclick="toggleRed(this)">
+                <img src="img/icons/Threads.png" data-red="Threads" onclick="toggleRed(this)">
+                <img src="img/icons/YouTube.png" data-red="YouTube" onclick="toggleRed(this)">
+                <img src="img/icons/X.png" data-red="X" onclick="toggleRed(this)">
+            </div>
+
+            <!-- TEXTO PEQUEÑO -->
+            <p class="texto-pequeno">
+                Tus datos se usarán únicamente con fines técnicos de contenido
+            </p>
+
+            <!-- BOTÓN GUARDAR -->
+            <button type="button" class="btn-guardar" onclick="guardarPerfil()">
+                Guardar
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- 🔥 SCRIPT BACK -->
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        }
+    </script>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

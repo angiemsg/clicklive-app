@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - CLICKLIVE</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="calendario">
+
+    <!-- 🔥 BOTÓN BACK GLOBAL -->
+    <button class="btn-back" onclick="goBack()">
+        &#8249;
+    </button>
+
+    <div class="container app">
+
+        <!-- HEADER -->
+        <div class="menu-header">
+            <p class="titulo-header">
+                Gestión de Contenidos
+                <img src="img/icons/GestionContenidos.png" class="icon-header">
+            </p>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div class="buscador">
+            <input type="text" placeholder="Buscar...">
+            <button></button>
+        </div>
+
+        <!-- CONTENEDOR DINÁMICO -->
+        <div id="contenedorCalendarios"></div>
+
+    </div>
+
+    <!-- =========================
+         MODAL
+    ========================== -->
+    <div id="modalContenido" class="modal">
+
+        <div class="modal-box">
+
+            <h3>Programar contenido</h3>
+
+            <!-- TEXTO -->
+            <textarea id="textoPost" placeholder="Escribe tu copy..."></textarea>
+
+            <!-- CAMPOS -->
+            <div class="grupo-campos">
+
+                <!-- ARCHIVO -->
+                <div class="campo">
+                    <label for="archivoPost" class="btn-file">
+                        Subir imagen o video
+                    </label>
+                    <input type="file" id="archivoPost" accept="image/*,video/*" hidden>
+                </div>
+
+                <div class="campo">
+                    <select id="redPost">
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>TikTok</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <input type="time" id="horaPost">
+                </div>
+
+            </div>
+
+            <!-- PREVIEW -->
+            <div id="previewContainer"></div>
+
+            <!-- BOTONES -->
+            <div class="grupo-botones">
+                <button onclick="guardarContenido()">Guardar</button>
+                <button onclick="cerrarModal()">Cancelar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 🔥 SCRIPT BACK -->
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        }
+    </script>
+
+    <!-- JS APP -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

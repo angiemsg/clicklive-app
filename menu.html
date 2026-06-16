@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - CLICKLIVE</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="menu">
+
+    <!-- 🔥 BOTÓN BACK GLOBAL -->
+    <button class="btn-back" onclick="goBack()">
+        &#8249;
+    </button>
+
+    <div class="container app">
+
+        <!-- CONTENEDOR FLEX REAL -->
+        <div class="menu-contenido">
+
+            <!-- HEADER -->
+            <div class="menu-header">
+                <p class="titulo-header">Menú</p>
+            </div>
+
+            <!-- LISTA -->
+            <div class="menu-list">
+
+                <div>
+                    <span>Cambiar idioma</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Acceso compartido</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Privacidad de la cuenta</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Contenido programado</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Permisos redes sociales</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Conexión a aplicaciones externas</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Conexión APIs externas</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Estadísticas de crecimiento global</span>
+                    <span>›</span>
+                </div>
+
+                <div>
+                    <span>Información</span>
+                    <span>›</span>
+                </div>
+
+            </div>
+
+            <!-- LOGOUT -->
+            <div class="logout-btn" onclick="cerrarSesion()">
+                CERRAR SESIÓN
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 🔥 SCRIPT BACK -->
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem("sesionActiva");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
